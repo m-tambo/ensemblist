@@ -1,0 +1,11 @@
+{
+  "name": "ensemblist",
+  "version": "1.0.0",
+  "description": "bringing professional musicians together",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "m-tambo",
+  "license": "ISC"
+}

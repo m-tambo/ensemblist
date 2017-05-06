@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ensemblist</title>
+  <link rel="stylesheet" href="/styling/main.css">
+</head>
+
+<body>
+<!-- _____ angular app ______ -->
+<!-- <h3>My Google Maps Demo</h3>
+<div id="map"></div>
+
+      <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+ -->
+  <div>
+    <div ng-app="ensemblist">
+      <div ng-view></div>
+    </div>
+  </div>
+
+
+    <!-- AIzaSyDBVVTWrtEJE9vEdbPh_BtmZMns7sEbPiU -->  <!-- TODO gitignore this -->
+    <!-- async defer -->
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBVVTWrtEJE9vEdbPh_BtmZMns7sEbPiU&callback=initMap">
+  </script>
+
+      <!-- ______dependency script tags_______ -->
+  <script src="/lib/angular/angular.min.js"></script>
+  <script src="/lib/angular-route/angular-route.min.js"></script>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+      <!-- ______modules_______ -->
+  <script src="/app/app.js"></script>
+      <!-- ______factories_______ -->
+  <script src=""></script>
+      <!-- ______controllers_______ -->
+  <script src="/app/controllers/mainCtrl.js"></script>
+
+
+
+</body>
+</html>

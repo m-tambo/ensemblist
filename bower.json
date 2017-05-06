@@ -1,0 +1,23 @@
+{
+  "name": "ensemble",
+  "description": "bringing professional musicians together",
+  "main": "index.js",
+  "authors": [
+    "m-tambo"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "jquery": "^3.2.1"
+  }
+}
