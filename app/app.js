@@ -1,15 +1,15 @@
-const app = angular.module('ensemblist', ['ngRoute'])
+const app = angular.module('ensemblist', ['ui.router', 'ui.bootstrap'])
 
 app
-  .config(($routeProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
 
-    $routeProvider
-      .when('/main', {
-        controller: "mainCtrl",
-        templateUrl: "/app/partials/main.html"
+    $urlRouterProvider.otherwise('/home');
+
+    $stateProvider
+      .state('home', {
+        url: '/home',
+        templateUrl: '/app/partials/home.html'
       })
-      .otherwise({
-        redirectTo: "/main"
-      })
+
 
   })
