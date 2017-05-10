@@ -1,5 +1,8 @@
-app.controller('gigVewCtrl', function () {
+app.controller('gigViewCtrl', function ($scope, $stateParams, gig) {
 
-  console.log(`firing the gig view controller`)
+  $scope.gig = gig
+
+  console.log(`firing the gig view controller for gig # ${$stateParams.id}`)
+
 
 })
