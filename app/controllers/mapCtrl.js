@@ -1,4 +1,5 @@
 app.controller('mapCtrl', function ($scope) {
+  console.log(`firing the initmap function`)
 
   $scope.initMap = () => {
     var nash = {lat: 36.1627, lng: -86.7816};
@@ -19,7 +20,6 @@ app.controller('mapCtrl', function ($scope) {
       map: map
     });
 
-    console.log(`firing the initmap function`)
   }
 
 })
