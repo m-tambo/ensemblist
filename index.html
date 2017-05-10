@@ -3,13 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>Ensemblist</title>
+  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="/lib/angular-bootstrap/ui-bootstrap-csp.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="/styling/main.css">
 </head>
 
 <body>
+
 <!-- _____ angular app ______ -->
-<!-- <h3>My Google Maps Demo</h3>
-<div id="map"></div>
+  <div>
+    <div ng-app="ensemblist">
+
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="#">Ensemblist</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="about">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <div class="container">
+        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+        <div ui-view></div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
 
       <script>
       var map;
