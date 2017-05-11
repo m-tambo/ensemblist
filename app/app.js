@@ -1,4 +1,4 @@
-const app = angular.module('ensemblist', ['ui.router', 'ui.bootstrap'])
+const app = angular.module('ensemblist', ['ui.router', 'ui.bootstrap', 'navbar'])
 
 app
   .config(($stateProvider, $urlRouterProvider) => {

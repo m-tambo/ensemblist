@@ -11,27 +11,15 @@
 <body>
 
 <!-- _____ angular app ______ -->
-  <div>
-    <div ng-app="ensemblist">
+  <div ng-app="ensemblist">
 
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="#">Ensemblist</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="about">About</a></li>
-        </ul>
-      </nav>
-
-      <!-- MAIN CONTENT -->
-      <div class="container">
-        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-        <div ui-view></div>
-      </div>
-
+    <navbar></navbar>
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div ui-view></div>
     </div>
-  </div>
+
+  </div> <!-- end of ng-app -->
 
 
   <!-- <h3>My Google Maps Demo</h3>
@@ -62,6 +50,7 @@
   <script src="/lib/jquery/dist/jquery.min.js"></script>
       <!-- ______modules_______ -->
   <script src="/app/app.js"></script>
+  <script src="/app/navbar.js"></script>
       <!-- ______factories_______ -->
   <script src="/app/factories/apiFactory.js"></script>
       <!-- ______controllers_______ -->
