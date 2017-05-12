@@ -5,7 +5,6 @@ nav
     return {
       restrict: "E",  // defines this directive as the element <navbar>
       templateUrl: "/app/partials/navbar.html",
-      controller: ($scope, authFactory, $location) => {
-      }
+      controller: 'navbarCtrl'
     }
   })
