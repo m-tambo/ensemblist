@@ -1,0 +1,24 @@
+<div class="gig-view container">
+  <div class="row">
+    <div class="gig-description">
+      <h2 class="col-md-6 pull-left">{{gig.name}}</h2>
+      <p class="col-md-6 pull-right">Details: <br/>{{gig.description}}</p>
+    </div>
+    <div class="seats-div container">
+      <div class="seat-card" ng-repeat="seat in seats">
+        <a ng-href="#!/profile/{{seat.user_id}}"><img ng-src="{{seat.user_id ? seat.user.picUrl : 'http://metrolinareia.org/wp/wp-content/uploads/17797.png'}}" /></a>
+        <p class="instrument-name">{{seat.instrument}}</p>
+      </div>
+    </div>
+
+  </div> <!-- END ROW -->
+</div> <!-- END CONTAINER -->
+
+
+<!--   <h1>gig #: {{gig.id}}</h1>
+  <h1>gig name: {{gig.name}}</h1>
+  <h1>owner_id: {{gig.owner_id}}</h1>
+  <h1>descrip: {{gig.description}}</h1>
+  <h1># of players: {{gig.seatNum}}</h1>
+  <h1>date: {{gig.date}}</h1>
+  <h1>status: {{gig.status}}</h1> -->

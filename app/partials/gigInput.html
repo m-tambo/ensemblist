@@ -1,0 +1,27 @@
+<div class="container gig-input-div">
+  <h3>Feed us some gig details</h3>
+  <hr>
+  <div>
+
+    <form class="inputs" ng-submit="addGig(gig.seatNum)">
+      <div class="input-field">
+        <label for="gig_name">GIG NAME</label><br>
+        <input id="gig_name" type="text" class="validate" ng-model="gig.name" required>
+      </div>
+      <div class="input-field">
+        <label for="gig_date">DATE</label><br>
+        <input id="gig_date" type="text" class="validate" ng-model="gig.date" required>
+      <div class="input-field">
+        <label for="gig_describe">DESCRIPTION</label><br>
+        <textarea id="gig_describe" ng-model="gig.description"></textarea>
+      </div>
+      </div>
+      <div class="input-field">
+        <label for="gig_seats">NUMBER OF MUSICIANS</label><br>
+        <input id="gig_seats" type="number" class="validate" ng-model="gig.seatNum" max="15" required>
+      </div>
+      <button class="ensem-btn" type="submit">SUBMIT</button>
+    </form>
+
+  </div>
+</div>

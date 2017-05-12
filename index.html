@@ -3,13 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Ensemblist</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="/styling/main.css">
 </head>
 
 <body>
+
 <!-- _____ angular app ______ -->
-<!-- <h3>My Google Maps Demo</h3>
-<div id="map"></div>
+  <div ng-app="ensemblist">
+
+    <navbar> <!-- THIS IS A DIRECTIVE --> </navbar>
+    <div>
+      <div ui-view></div>
+    </div>
+
+  </div> <!-- end of ng-app -->
+
+
+  <!-- <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
 
       <script>
       var map;
@@ -20,30 +33,37 @@
         });
       }
     </script>
- -->
-  <div>
-    <div ng-app="ensemblist">
-      <div ng-view></div>
-    </div>
-  </div>
-
-
+              -->
     <!-- AIzaSyDBVVTWrtEJE9vEdbPh_BtmZMns7sEbPiU -->  <!-- TODO gitignore this -->
     <!-- async defer -->
-  <script
+<!--   <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBVVTWrtEJE9vEdbPh_BtmZMns7sEbPiU&callback=initMap">
-  </script>
+  </script> -->
 
       <!-- ______dependency script tags_______ -->
   <script src="/lib/angular/angular.min.js"></script>
+  <script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+  <script src="/node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+  <script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="/lib/angular-route/angular-route.min.js"></script>
   <script src="/lib/jquery/dist/jquery.min.js"></script>
       <!-- ______modules_______ -->
   <script src="/app/app.js"></script>
+  <script src="/app/navbar.js"></script>
       <!-- ______factories_______ -->
-  <script src=""></script>
+  <script src="/app/factories/apiFactory.js"></script>
       <!-- ______controllers_______ -->
-  <script src="/app/controllers/mainCtrl.js"></script>
+  <script src="/app/controllers/gigInputCtrl.js"></script>
+  <script src="/app/controllers/gigViewCtrl.js"></script>
+  <script src="/app/controllers/homeCtrl.js"></script>
+  <script src="/app/controllers/landingCtrl.js"></script>
+  <script src="/app/controllers/loginCtrl.js"></script>
+  <script src="/app/controllers/mapCtrl.js"></script>
+  <script src="/app/controllers/messageCtrl.js"></script>
+  <script src="/app/controllers/navbarCtrl.js"></script>
+  <script src="/app/controllers/profileCtrl.js"></script>
+  <script src="/app/controllers/registerCtrl.js"></script>
+  <script src="/app/controllers/seatSelectCtrl.js"></script>
 
 
 
