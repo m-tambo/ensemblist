@@ -1,11 +1,14 @@
 <div class="container seat-select-div">
-  <h3>Select the required musicians</h3>
+  <h3>Specify the required instruments</h3>
   <hr>
-      {{instruments[0].instrument}}
-  <div ng-repeat="seat in seats">
-    <select ng-model="seat.instrument">
-      <option></option>
-    </select>
-  </div>
+
+  <form ng-submit="goToGigView()">
+    <div ng-repeat="seat in seats">
+        <select ng-model="selected" ng-options="instrument.type for instrument in instruments" ng-change="$parent.saveInstrument(selected.type, seat.id)">
+          <option ng-model="selected">{{instrument.type}}</option>
+        </select>
+    </div>
+    <button class="ensem-btn" type="submit">Submit</button>
+  </form>
 
 </div>
