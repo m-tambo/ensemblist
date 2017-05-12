@@ -3,6 +3,12 @@ app.factory('apiFactory', function($http) {
   const srvr = 'http://localhost:3030/api/v1'
 
   return {
+    getInstruments() {
+      return $http.get('/public/instruments.json')
+        .then((data) => {
+          return data.data
+        })
+    },
 //_____ GIG ENDPOINTS _____
     getGigById(gigId) { // get one gig by id
       return $http.get(`${srvr}/gig/${gigId}`)
