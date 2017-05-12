@@ -23,15 +23,29 @@ app
       })
       .state('home', {
         url: '/home',
-        resolve: {
-        },
         controller: 'homeCtrl',
-        templateUrl: '/app/partials/home.html'
+        templateUrl: '/app/partials/home.html',
+        resolve: {
+        }
       })
       .state('gigInput', {
         url: '/newgig',
         templateUrl: '/app/partials/gigInput.html',
         controller: 'gigInputCtrl'
+      })
+      .state('seatSelect', {
+        url: '/seatselect/:id',
+        templateUrl: '/app/partials/seatSelect.html',
+        controller: 'seatSelectCtrl',
+         resolve: {
+          seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            return apiFactory.getSeatsByGig($stateParams.id)
+          }],
+          instruments: ['apiFactory', (apiFactory) => {
+            return apiFactory.getInstruments()
+          }],
+
+        }
       })
       .state('message', {
         url: '/message',
@@ -40,18 +54,26 @@ app
       })
       .state('gigView', {
         url: '/gig/:id',
-        resolve: {
-          gig: ['apiFactory', '$stateParams', function (apiFactory, $stateParams) {
-            return apiFactory.getGigById($stateParams.id)
-          }]
-        },
         templateUrl: '/app/partials/gigView.html',
-        controller: 'gigViewCtrl'
+        controller: 'gigViewCtrl',
+        resolve: {
+          gig: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            return apiFactory.getGigById($stateParams.id)
+          }],
+          seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            return apiFactory.getSeatsByGig($stateParams.id)
+          }]
+        }
       })
       .state('profile', {
-        url: '/profile',
+        url: '/profile/:id',
         templateUrl: '/app/partials/profile.html',
-        controller: 'profileCtrl'
+        controller: 'profileCtrl',
+        resolve: {
+          user: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            return apiFactory.getUserById($stateParams.id)
+          }]
+        }
       })
 
   }) // end of config
