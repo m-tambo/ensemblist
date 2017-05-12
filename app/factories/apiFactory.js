@@ -59,7 +59,7 @@ app.factory('apiFactory', function($http) {
           return data.data
         })
     },
-    upateSeat(seatId, updatedSeat) {
+    updateSeat(seatId, updatedSeat) {
       return $http.patch(`${srvr}/seat/edit/${seatId}`, updatedSeat)
         .then((data) => {
           return data.data
