@@ -1,3 +1,152 @@
+/*_______UNIVERSAL STYLING______*/
+body {
+  background-color: #FF9800;
+  /*background-image: radial-gradient(#F57C00, yellow);*/
+  /*background: center/cover no-repeat fixed;*/
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+a {
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none  !important;
+  font-weight: 1.5em;
+}
+
+.slogan {
+  font-size: 3em;
+  font-style: italic;
+  color: dodgerblue;
+  margin-top: 20%;
+}
+
+.ensem-btn {
+  margin-top: 2%;
+  padding: 1em 1.8em 1em 1.8em;
+  border: 2px solid #FF9800;
+  background: white;
+}
+
+/*_______NAVBAR______*/
+.main-heading {
+  display: flex;
+  justify-content: space-between;
+  margin: -3% 0 0 4%;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-weight: 1em;
+  font-family: 'Quicksand', sans-serif;
+}
+nav {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  float: right;
+  margin: 0 5%;
+  height: 3.2em;
+}
+
+nav #nav-bar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 4px;
+  background: dodgerblue;
+}
+
+nav a {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 15px;
+  position: relative;
+  text-decoration: none;
+  font-size: large;
+  color: white;
+  &.active {
+    position: relative;
+    &:after {
+      // @extend #nav-bar;
+      // content: "";
+      // right: 0;
+      // z-index: -1;
+    }
+  }
+}
+
+/*_______GIG INPUT VIEW______*/
+.gig-input-div {
+  background: white;
+  border-radius: 6px;
+  box-shadow: grey 3px 3px 20px;
+  margin: 5% auto;
+  padding: 2%;
+}
+
+input, textarea {
+  text-align: center;
+  border: 3px solid #FF9800;
+  padding: 1%;
+  margin: 1%;
+  width: 25em;
+}
+
+.inputs {
+  display: block;
+  align-items: center;
+}
+
+.input-field {
+  display: block;
+}
+
+/*_______SEAT SELECT VIEW______*/
+.seat-select-div {
+  background: white;
+  border-radius: 6px;
+  box-shadow: grey 3px 3px 20px;
+  margin: 5% auto;
+  padding: 2%;
+}
+
+.seat-select-div select {
+  margin: 1%;
+}
+
+
+/*_______GIG VIEW______*/
+.gig-view {
+  background: white;
+  border-radius: 6px;
+  box-shadow: grey 3px 3px 20px;
+  margin: 3% auto;
+}
+
+.gig-description {
+  display: flex;
+  align-items: baseline;
+}
+
+.seats-div {
+  display: flex;
+  justify-content: center;
+}
+
+.seat-card img {
+  height: 80px;
+  border-radius: 50%;
+}
+
+/*_______PROFILE VIEW______*/
+.profile-card {
+  width: 100%;
+  background-color: white;
+}
+
+/*_______GOOGLE MAP STUFF______*/
 #map {
   height: 400px;
   width: 102%;
