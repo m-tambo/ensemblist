@@ -1,7 +1,5 @@
 app.controller('navbarCtrl', function () {
 
-  console.log(`firing the navbar controller`)
-
   // Elements
   var $nav = $('#nav'),
     $links = $('#nav a'),
