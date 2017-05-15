@@ -6,7 +6,7 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
 
   $scope.searching = false
 
-  $scope.startSearching = function(e) { // open search div
+  $scope.startSearching = function(e) { // open search div, target the selected seat on scope
     $scope.targetSeat = e
     $scope.searching = true
   }
