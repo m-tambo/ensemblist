@@ -4,10 +4,41 @@
       <h2 class="col-md-6 pull-left">{{gig.name}}</h2>
       <p class="col-md-6 pull-right">Details: <br/>{{gig.description}}</p>
     </div>
-    <div class="seats-div container">
+    <div class="seats-div">
       <div class="seat-card" ng-repeat="seat in seats">
-        <a ng-href="#!/profile/{{seat.user_id}}"><img ng-src="{{seat.user_id ? seat.user.picUrl : 'http://metrolinareia.org/wp/wp-content/uploads/17797.png'}}" /></a>
+        <!-- <a ng-href="#!/profile/{{seat.user_id}}"></a> -->
+        <a href="" ng-click="startSearching(seat)"><img class="{{seat.status}}" ng-src="{{seat.user_id ? seat.user.picUrl : '/public/blank-user.png'}}" /></a>
         <p class="instrument-name">{{seat.instrument}}</p>
+        <p class="seat-status" ng-if="seat.status !== null">{{seat.status}}</p>
+      </div>
+    </div>
+    <div class="search-box" ng-if="searching">
+      <hr />
+      <h1>SEARCHING FOR {{targetSeat.instrument}}...</h1>
+      <form class="zip-code-form" ng-submit="zipCodeSearch(zip, radius)">
+        <div class="search-input-field">
+          <label for="gig_describe">ZIP CODE:</label>
+          <input id="gig_describe" ng-model="zip"></input>
+        </div>
+        <div class="search-input-field">
+          <label for="search-radius">SEARCH RADIUS:</label>
+          <input id="search-radius" type="number" class="validate" ng-model="radius" max="100" required>miles
+        </div><br />
+        <button class="ensem-btn" type="submit">SUBMIT</button>
+      </form>
+      <div class="user-search-results" ng-repeat="result in results">
+        <div class ="search-result-card">
+          <hr />
+          <img src={{result.picUrl}} />
+          <span>   {{result.first}} {{result.last}}   </span>
+          <button ng-click="inviteToGig(result)">INVITE</button>
+          <button ng-click="showMore(result)">MORE INFO</button>
+          <div class="more-user-info" ng-if="result === moreInfoUser">
+            <p>{{moreInfoUser.street}}</p>
+            <p>{{moreInfoUser.city}} {{moreInfoUser.state}} {{moreInfoUser.zip}}</p>
+            <p>{{moreInfoUser.email}}</p>
+          </div>
+        </div>
       </div>
     </div>
 

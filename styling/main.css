@@ -21,14 +21,14 @@ hr {
 .slogan {
   font-size: 3em;
   font-style: italic;
-  color: dodgerblue;
+  color: #1c66ae;
   margin-top: 20%;
 }
 
 .ensem-btn {
   margin-top: 2%;
   padding: 1em 1.8em 1em 1.8em;
-  border: 2px solid dodgerblue;
+  border: 2px solid #1c66ae;
   background: white;
 }
 
@@ -59,7 +59,7 @@ nav #nav-bar {
   top: 100%;
   left: 0;
   height: 4px;
-  background: dodgerblue;
+  background: #1c66ae;
 }
 
 nav a {
@@ -79,6 +79,10 @@ nav a {
       // z-index: -1;
     }
   }
+}
+
+.nav-pic {
+  max-width: 40px;
 }
 
 /*_______GIG INPUT VIEW______*/
@@ -131,16 +135,63 @@ input, textarea {
 
 .gig-description {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  margin: 1% 0 4% 0;
 }
 
 .seats-div {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .seat-card img {
   height: 80px;
+  border-radius: 50%;
+}
+
+.seat-card {
+  margin: 0 2% 0 2%;
+}
+
+.pending {
+  border: 4px double red;
+}
+
+.accepted {
+  border: 4px double green;
+}
+
+.search-box {
+  margin: 0 0 3% 0;
+}
+
+.search-input-field {
+  display: inline;
+}
+
+.search-input-field input {
+  text-align: center;
+  border: 3px solid #FF9800;
+  padding: 1%;
+  margin: 1%;
+  width: 5em;
+}
+
+.zip-code-form {
+  margin: 1% 0 2% 0;
+}
+
+.user-search-results {
+  display: flex;
+  justify-content: center;
+}
+
+.search-result-card {
+  display: inline-block;
+}
+
+.search-result-card img {
   border-radius: 50%;
 }
 

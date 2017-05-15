@@ -6,6 +6,13 @@ app.factory('apiFactory', function($http) {
     getInstruments() {
       return $http.get('/public/instruments.json')
         .then((data) => {
+          console.log("data:", data)
+          return data
+        })
+    },
+    getZipCodes(zip, radius) {
+      return $http.get(`${srvr}/zipsearch/${zip}/${radius}`)
+        .then((data) => {
           return data.data
         })
     },
