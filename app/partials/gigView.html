@@ -30,8 +30,14 @@
         <div class ="search-result-card">
           <hr />
           <img src={{result.picUrl}} />
-          <span>   {{result.first}} {{result.last}} ({{result.zip}})   </span>
+          <span>   {{result.first}} {{result.last}}   </span>
           <button ng-click="inviteToGig(result)">INVITE</button>
+          <button ng-click="showMore(result)">MORE INFO</button>
+          <div class="more-user-info" ng-if="result === moreInfoUser">
+            <p>{{moreInfoUser.street}}</p>
+            <p>{{moreInfoUser.city}} {{moreInfoUser.state}} {{moreInfoUser.zip}}</p>
+            <p>{{moreInfoUser.email}}</p>
+          </div>
         </div>
       </div>
     </div>

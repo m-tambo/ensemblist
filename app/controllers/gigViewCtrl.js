@@ -52,6 +52,10 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
       .catch((err) => console.log("error:", err))
   }
 
+  $scope.showMore = (result) => {
+    $scope.moreInfoUser = result
+  }
+
     //_______UI BOOTSTRAP TOOLTIP/MODAL ATTEMPT________
   $(document).ready( () => {
 
