@@ -137,10 +137,52 @@ input, textarea {
 .seats-div {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .seat-card img {
   height: 80px;
+  border-radius: 50%;
+}
+
+.seat-card {
+  margin: 0 2% 0 2%;
+}
+
+.pending {
+  border: 4px double red;
+}
+
+.accepted {
+  border: 4px double green;
+}
+
+.search-input-field {
+  display: inline;
+}
+
+.search-input-field input {
+  text-align: center;
+  border: 3px solid #FF9800;
+  padding: 1%;
+  margin: 1%;
+  width: 5em;
+}
+
+.zip-code-form {
+  margin: 1% 0 2% 0;
+}
+
+.user-search-results {
+  display: flex;
+  justify-content: center;
+}
+
+.search-result-card {
+  display: inline-block;
+}
+
+.search-result-card img {
   border-radius: 50%;
 }
 
