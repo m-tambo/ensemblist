@@ -135,7 +135,8 @@ input, textarea {
 
 .gig-description {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  margin: 1% 0 4% 0;
 }
 
 .seats-div {
@@ -159,6 +160,10 @@ input, textarea {
 
 .accepted {
   border: 4px double green;
+}
+
+.search-box {
+  margin: 0 0 3% 0;
 }
 
 .search-input-field {
