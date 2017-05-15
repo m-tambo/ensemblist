@@ -7,7 +7,7 @@
     <div class="seats-div">
       <div class="seat-card" ng-repeat="seat in seats">
         <!-- <a ng-href="#!/profile/{{seat.user_id}}"></a> -->
-        <a href="" ng-click="startSearching(seat)"><img class="{{seat.status}}" ng-src="{{seat.user_id ? seat.user.picUrl : 'http://metrolinareia.org/wp/wp-content/uploads/17797.png'}}" /></a>
+        <a href="" ng-click="startSearching(seat)"><img class="{{seat.status}}" ng-src="{{seat.user_id ? seat.user.picUrl : '/public/blank-user.png'}}" /></a>
         <p class="instrument-name">{{seat.instrument}}</p>
         <p class="seat-status" ng-if="seat.status !== null">{{seat.status}}</p>
       </div>

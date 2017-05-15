@@ -5,7 +5,8 @@
       <a class="active" href="#!/newgig">CREATE A GIG</a>
       <a href="">MY GIGS</a>
       <!-- <a href="">Invites</a> -->
-      <a href="#!/profile/">PROFILE</a>
+      <a href=`#!/profile/${currentUser.id}`>PROFILE</a>
+      <img class="nav-pic" ng-src="{{currentUser ? currentUser.picUrl : '/public/blank-user.png'}}" />
   </nav>
 </div>
 

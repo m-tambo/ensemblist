@@ -81,6 +81,10 @@ nav a {
   }
 }
 
+.nav-pic {
+  max-width: 40px;
+}
+
 /*_______GIG INPUT VIEW______*/
 .gig-input-div {
   background: white;
