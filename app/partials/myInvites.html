@@ -1,22 +1,18 @@
 <div class="my-gigs-div">
-  <h1>My invites</h1>
+  <h4>MY INVITES</h4>
   <hr />
-  <h2>Pending:</h2>
-  <div ng-repeat="seat in seats">
-    <div ng-if="seat.status === 'pending'">
-      <h3>{{gig.name}}</h3>
-      <h4>Invited by {{}}</h4>
-      <p>Details: {{gig.details}}</p>
-      <hr />
-    </div>
+  <h3 class="red">Pending:</h3>
+  <div class="invite-card" ng-repeat="seat in seats" ng-if="seat.status === 'pending'">
+      <a ng-href="#!/gig/{{seat.gig.id}}"><h3>{{seat.gig.name}}</h3></a>
+      <!-- <h4>Invited by {{}}</h4> -->
+      <p>Details: {{seat.gig.description}}</p>
+      <button class="ensem-btn" ng-click="acceptInvite(seat)">ACCEPT INVITATION</button>
   </div>
-  <h2>Accepted:</h2>
-  <div ng-repeat="seat in seats">
-    <div ng-if="seat.status === 'accepted'"
-      <h3>{{gig.name}}</h3>
-      <h4>Invited by {{}}</h4>
-      <p>Details: {{gig.details}}</p>
-      <hr />
-    </div>
+  <hr />
+  <h3 class="green">Accepted:</h3>
+  <div class="invite-card" ng-repeat="seat in seats" ng-if="seat.status === 'accepted'">
+      <a ng-href="#!/gig/{{seat.gig.id}}"><h3>{{seat.gig.name}}</h3></a>
+      <!-- <h4>Invited by {{}}</h4> -->
+      <p>Details: {{seat.gig.description}}</p>
   </div>
 </div>
