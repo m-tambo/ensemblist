@@ -50,7 +50,7 @@ nav {
   text-align: center;
   position: relative;
   float: right;
-  margin: 0 5%;
+  margin: 0 3%;
   height: 3.2em;
 }
 
@@ -82,7 +82,8 @@ nav a {
 }
 
 .nav-pic {
-  max-width: 40px;
+  max-width: 30px;
+
 }
 
 /*_______GIG INPUT VIEW______*/
@@ -130,7 +131,8 @@ input, textarea {
   background: white;
   border-radius: 6px;
   box-shadow: grey 3px 3px 20px;
-  margin: 3% auto;
+  margin: 3%;
+  padding: 1%;
 }
 
 .gig-description {
@@ -194,6 +196,18 @@ input, textarea {
 .search-result-card img {
   border-radius: 50%;
 }
+
+/*_______MY GIGS VIEW______*/
+.my-gigs-div {
+  display: grid;
+  background: white;
+  padding: 2% 10%;
+  margin: 4% 0;
+  justify-content: flex-start;
+}
+
+/*_______MY INVITES VIEW______*/
+
 
 /*_______PROFILE VIEW______*/
 .profile-card {
