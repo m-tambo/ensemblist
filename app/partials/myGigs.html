@@ -1,4 +1,8 @@
-<h1>My gigs</h1>
-  <div class="my-gigs-div" ng-repeat="gig in gigs">
-    <p>{{gig.name}}</p>
+<div class="my-gigs-div">
+  <h1>My gigs</h1>
+  <hr />
+  <div ng-repeat="gig in gigs">
+    <a href="#!/gig/{{gig.id}}"><h3>{{gig.name}}</h3></a>
+    <p>Details: {{gig.description}}</p>
   </div>
+</div>
