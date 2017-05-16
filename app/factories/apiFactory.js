@@ -64,10 +64,14 @@ app.factory('apiFactory', function($http, $q) {
         })
     },
     getSeatsByGig(gigId) { // get all seats by gig id
-      console.log("gigId from api factory:", gigId)
       return $http.get(`${srvr}/seats/${gigId}`)
         .then((data) => {
-          console.log("data:", data)
+          return data.data
+        })
+    },
+    getSeatsByUser(userId) { // get all seats (with related gig) by user id
+      return $http.get(`${srvr}/seatsuser/${userId}`)
+        .then((data) => {
           return data.data
         })
     },

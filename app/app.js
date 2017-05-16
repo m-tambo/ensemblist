@@ -74,7 +74,7 @@ app
         templateUrl: '/app/partials/myInvites.html',
         resolve: {
           seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
-            return apiFactory.getGigsByOwner(1) // TODO change this to the id of the current user
+            return apiFactory.getSeatsByUser(1) // TODO change this to the id of the current user
           }]
         }
       })
