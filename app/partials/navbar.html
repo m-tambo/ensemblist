@@ -3,8 +3,11 @@
   <nav id="nav">
     <div id="nav-bar"></div>
       <a class="active" href="#!/newgig">CREATE A GIG</a>
-      <a href="">MY GIGS</a>
-      <a href=`#!/profile/${currentUser.id}`>PROFILE</a>
-      <img class="nav-pic" ng-src="{{currentUser ? currentUser.picUrl : '/public/blank-user.png'}}" />
+      <a href="#!/mygigs">MY GIGS</a>
+      <a href="#!/myinvites">MY INVITES</a>
+      <a href=`#!/profile/${currentUser.id}`>
+        <img class="nav-pic" ng-src="{{currentUser ? currentUser.picUrl : '/public/blank-user.png'}}" />
+      </a>
+
   </nav>
 </div>

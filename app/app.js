@@ -68,6 +68,16 @@ app
           }]
         }
       })
+      .state('myInvites', {
+        url: '/myinvites',
+        controller: 'myInvitesCtrl',
+        templateUrl: '/app/partials/myInvites.html',
+        resolve: {
+          seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            return apiFactory.getGigsByOwner(1) // TODO change this to the id of the current user
+          }]
+        }
+      })
       .state('profile', {
         url: '/profile/:id',
         templateUrl: '/app/partials/profile.html',
