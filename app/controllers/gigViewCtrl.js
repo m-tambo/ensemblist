@@ -9,6 +9,8 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
   $scope.startSearching = function(e) { // open search div, target the selected seat on scope
     $scope.targetSeat = e
     $scope.searching = true
+    $location.hash('search-box') // set the location.hash to the id of the element you wish to scroll to
+    $anchorScroll()
   }
 
   $scope.zipCodeSearch = (zip, radius) => { // get an array of zips in specified radius
@@ -46,7 +48,7 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
     apiFactory.updateSeat($scope.targetSeat.id, updatedSeat)
       .then(() => {
         // alert(`invite sent`)
-        // $location.url(`/gig/${$scope.gig.id}`)
+        $location.hash(``)
         $state.reload()
       })
       .catch((err) => console.log("error:", err))
