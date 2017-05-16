@@ -6,10 +6,10 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
 
   $scope.searching = false
 
-  $scope.startSearching = function(e) { // open search div, target the selected seat on scope
+  $scope.startSearching = function(e) { // open search div, targeting the selected seat on scope
     $scope.targetSeat = e
-    $scope.searching = true
-    $location.hash('search-box') // set the location.hash to the id of the element you wish to scroll to
+    $scope.searching = true // the search-box is set to ng-show="searching"
+    $location.hash('search-box') // set the location.hash to scroll down to the div of id="search-box"
     $anchorScroll()
   }
 
