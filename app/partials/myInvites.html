@@ -1,0 +1,22 @@
+<div class="my-gigs-div">
+  <h1>My invites</h1>
+  <hr />
+  <h2>Pending:</h2>
+  <div ng-repeat="seat in seats">
+    <div ng-if="seat.status === 'pending'">
+      <h3>{{gig.name}}</h3>
+      <h4>Invited by {{}}</h4>
+      <p>Details: {{gig.details}}</p>
+      <hr />
+    </div>
+  </div>
+  <h2>Accepted:</h2>
+  <div ng-repeat="seat in seats">
+    <div ng-if="seat.status === 'accepted'"
+      <h3>{{gig.name}}</h3>
+      <h4>Invited by {{}}</h4>
+      <p>Details: {{gig.details}}</p>
+      <hr />
+    </div>
+  </div>
+</div>
