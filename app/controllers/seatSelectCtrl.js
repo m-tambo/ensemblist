@@ -3,7 +3,9 @@ app.controller('seatSelectCtrl', function ($scope, seats, instruments, apiFactor
 
     // declare the resolve objects on scope
   $scope.seats = seats
+  console.log("$scope.seats:", $scope.seats)
   $scope.instruments = instruments
+  console.log("$scope.instruments:", $scope.instruments)
 
     // each time the option is changed, update the corresponding seat with the new instrument
   $scope.saveInstrument = (inst, seatId) => {

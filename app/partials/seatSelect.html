@@ -3,10 +3,11 @@
   <hr>
 
   <form ng-submit="goToGigView()">
-    <div ng-repeat="seat in seats">
-        <select ng-model="selected" ng-options="instrument.type for instrument in instruments" ng-change="$parent.saveInstrument(selected.type, seat.id)">
-          <option ng-model="selected">{{instrument.type}}</option><span ng-if="seat.instrument">{{seat.instrument}}</span>
-        </select>
+    <div class="seat-options" ng-repeat="seat in seats">
+      <span>{{seat.instrument}}</span>
+      <select ng-model="selected" ng-options="instrument.type for instrument in instruments" ng-change="$parent.saveInstrument(selected.type, seat.id)">
+          <option ng-model="selected">{{instrument.type}}</option>
+      </select>
     </div>
     <button class="ensem-btn" type="submit">SUBMIT</button>
   </form>

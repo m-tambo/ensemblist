@@ -21,13 +21,6 @@ app
         templateUrl: '/app/partials/register.html',
         controller: 'registerCtrl'
       })
-      .state('home', {
-        url: '/home',
-        controller: 'homeCtrl',
-        templateUrl: '/app/partials/home.html',
-        resolve: {
-        }
-      })
       .state('gigInput', {
         url: '/newgig',
         templateUrl: '/app/partials/gigInput.html',
@@ -39,12 +32,12 @@ app
         controller: 'seatSelectCtrl',
          resolve: {
           seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            console.log("$stateParams.id:", $stateParams.id)
             return apiFactory.getSeatsByGig($stateParams.id)
           }],
           instruments: ['apiFactory', (apiFactory) => {
             return apiFactory.getInstruments()
-          }],
-
+          }]
         }
       })
       .state('message', {
@@ -62,6 +55,26 @@ app
           }],
           seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
             return apiFactory.getSeatsByGig($stateParams.id)
+          }]
+        }
+      })
+      .state('myGigs', {
+        url: '/mygigs',
+        controller: 'myGigsCtrl',
+        templateUrl: '/app/partials/myGigs.html',
+        resolve: {
+          gigs: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            return apiFactory.getGigsByOwner(1) // TODO change this to the id of the current user
+          }]
+        }
+      })
+      .state('myInvites', {
+        url: '/myinvites',
+        controller: 'myInvitesCtrl',
+        templateUrl: '/app/partials/myInvites.html',
+        resolve: {
+          seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
+            return apiFactory.getSeatsByUser(1) // TODO change this to the id of the current user
           }]
         }
       })

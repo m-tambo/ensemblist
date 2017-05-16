@@ -1,4 +1,4 @@
-app.factory('apiFactory', function($http) {
+app.factory('apiFactory', function($http, $q) {
 
   const srvr = 'http://localhost:3030/api/v1'
 
@@ -7,7 +7,7 @@ app.factory('apiFactory', function($http) {
       return $http.get('/public/instruments.json')
         .then((data) => {
           console.log("data:", data)
-          return data
+          return data.data
         })
     },
     getZipCodes(zip, radius) {
@@ -23,17 +23,26 @@ app.factory('apiFactory', function($http) {
           return data.data
         })
     },
-    getGigByOwner(ownerId) { // get one gig by owner id
+    getGigsByOwner(ownerId) { // get all gigs by owner id
       return $http.get(`${srvr}/gigs/${ownerId}`)
         .then((data) => {
           return data.data
         })
     },
+    // createGig(newGig) {
+    //   return $http.post(`${srvr}/gig/new`, newGig)
+    //     .then((data) => {
+    //       return data.data
+    //     })
+    // },
     createGig(newGig) {
-      return $http.post(`${srvr}/gig/new`, newGig)
+      return $q((res, rej) => {
+        $http.post(`${srvr}/gig/new`, newGig)
         .then((data) => {
-          return data.data
+          res(data.data)
         })
+        .catch((err) => rej(err))
+      })
     },
     updateGig(gigId, updatedGig) {
       return $http.patch(`${srvr}/gig/edit/${gigId}`, updatedGig)
@@ -56,6 +65,12 @@ app.factory('apiFactory', function($http) {
     },
     getSeatsByGig(gigId) { // get all seats by gig id
       return $http.get(`${srvr}/seats/${gigId}`)
+        .then((data) => {
+          return data.data
+        })
+    },
+    getSeatsByUser(userId) { // get all seats (with related gig) by user id
+      return $http.get(`${srvr}/seatsuser/${userId}`)
         .then((data) => {
           return data.data
         })

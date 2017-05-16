@@ -3,20 +3,11 @@
   <nav id="nav">
     <div id="nav-bar"></div>
       <a class="active" href="#!/newgig">CREATE A GIG</a>
-      <a href="">MY GIGS</a>
-      <!-- <a href="">Invites</a> -->
-      <a href=`#!/profile/${currentUser.id}`>PROFILE</a>
-      <img class="nav-pic" ng-src="{{currentUser ? currentUser.picUrl : '/public/blank-user.png'}}" />
+      <a href="#!/mygigs">MY GIGS</a>
+      <a href="#!/myinvites">MY INVITES</a>
+      <a ng-href="#!/profile/1">  <!-- ${currentUser.id} -->
+        <img class="nav-pic" ng-src="{{currentUser ? currentUser.picUrl : '/public/blank-user.png'}}" />
+      </a>
+
   </nav>
 </div>
-
-<!-- <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="#">Ensemblist</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a ui-sref="home">Home</a></li>
-            <li><a ui-sref="about">About</a></li>
-        </ul>
-      </nav>
- -->
