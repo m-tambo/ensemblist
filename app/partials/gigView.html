@@ -1,18 +1,25 @@
-<div class="gig-view container">
+<div class="gig-view" class="gig-view container">
   <div class="row">
+
     <div class="gig-description">
       <h2 class="col-md-6 pull-left">{{gig.name}}</h2>
-      <p class="col-md-6 pull-right">Details: <br/>{{gig.description}}</p>
-    </div>
-    <div class="seats-div">
+      <div class="col-md-6 pull-right">
+        <p>Details: </p>
+        <p>{{gig.description}}</p>
+        <p>{{gig.date}}</p>
+      </div>
+    </div> <!-- END OF GIG DESCRIPTION -->
+
+    <div class="seats-div circle-container-{{seats.length}}">
       <div class="seat-card" ng-repeat="seat in seats">
         <!-- <a ng-href="#!/profile/{{seat.user_id}}"></a> -->
         <a href="" ng-click="startSearching(seat)"><img class="{{seat.status}}" ng-src="{{seat.user_id ? seat.user.picUrl : '/public/blank-user.png'}}" /></a>
         <p class="instrument-name">{{seat.instrument}}</p>
         <p class="seat-status" ng-if="seat.status !== null">{{seat.status}}</p>
       </div>
-    </div>
-    <div class="search-box" ng-if="searching">
+    </div> <!-- END OF SEATS DIV -->
+
+    <div id="search-box" class="search-box" ng-show="searching">
       <hr />
       <h1>SEARCHING FOR {{targetSeat.instrument}}...</h1>
       <form class="zip-code-form" ng-submit="zipCodeSearch(zip, radius)">
@@ -39,17 +46,8 @@
             <p>{{moreInfoUser.email}}</p>
           </div>
         </div>
-      </div>
-    </div>
+      </div> <!-- END OF USER-SEARCH-RESULTS -->
+    </div> <!-- END OF SEARCH-BOX -->
 
   </div> <!-- END ROW -->
 </div> <!-- END CONTAINER -->
-
-
-<!--   <h1>gig #: {{gig.id}}</h1>
-  <h1>gig name: {{gig.name}}</h1>
-  <h1>owner_id: {{gig.owner_id}}</h1>
-  <h1>descrip: {{gig.description}}</h1>
-  <h1># of players: {{gig.seatNum}}</h1>
-  <h1>date: {{gig.date}}</h1>
-  <h1>status: {{gig.status}}</h1> -->
