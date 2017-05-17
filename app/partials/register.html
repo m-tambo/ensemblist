@@ -1,1 +1,19 @@
-<h1>Register here</h1>
+<br />
+<h1>REGISTER</h1>
+<hr />
+<form class="register-form" ng-submit="registerUser()">
+  <div class="input-field">
+    <label for="register_email">EMAIL</label><br>
+    <input id="register_email" type="text" class="validate" ng-model="user.email" required>
+  </div>
+  <div class="input-field">
+    <label for="register_pass">PASSWORD</label><br>
+    <input id="register_pass" type="text" class="validate" ng-model="user.password" required>
+  </div>
+  <div class="input-field">
+    <label for="confirm_pass">CONFIRM PASSWORD</label><br>
+    <input id="confirm_pass" type="text" class="validate" ng-model="user.confirmation" required>
+  </div>
+  <button class="ensem-btn" type="submit">SUBMIT</button>
+
+</form>
