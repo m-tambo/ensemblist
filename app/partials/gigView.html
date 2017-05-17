@@ -15,7 +15,7 @@
         <!-- <a ng-href="#!/profile/{{seat.user_id}}"></a> -->
         <a href="" ng-click="startSearching(seat)"><img class="{{seat.status}}" ng-src="{{seat.user_id ? seat.user.picUrl : '/public/blank-user.png'}}" /></a>
         <p class="instrument-name">{{seat.instrument}}</p>
-        <p class="seat-status" ng-if="seat.status !== null">{{seat.status}}</p>
+        <p ng-class="{hidden: seat.status === null, red: seat.status === 'pending', green: seat.status === 'accepted'}">[ {{seat.status}} ]</p>
       </div>
     </div> <!-- END OF SEATS DIV -->
 
