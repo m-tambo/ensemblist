@@ -28,7 +28,11 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
         console.log("users:", users)
         let newArray = users.filter(x => array.includes(Number(x.zip)) ? x : false)
         console.log("newArray:", newArray)
-        return newArray
+        if (newArray.length === 0) {
+          alert('No collaborators found. Please widen your radius')
+        } else {
+          return newArray
+        }
       })
       .then((results) => {
         $scope.results = results   // define the search results on scope
