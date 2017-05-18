@@ -3,6 +3,18 @@ app.factory('apiFactory', function($http, $q) {
   const srvr = 'http://localhost:3030/api/v1'
 
   return {
+    login(email, password) {
+      return $http.post(`${srvr}/login`, {email, password})
+        .then((res) => {
+          return res
+        })
+    },
+    register(user) {
+      return $http.post(`${srvr}/register`, user)
+        .then((res) => {
+          return res
+        })
+    },
     getInstruments() {
       return $http.get('/public/instruments.json')
         .then((data) => {
@@ -12,6 +24,12 @@ app.factory('apiFactory', function($http, $q) {
     },
     getZipCodes(zip, radius) {
       return $http.get(`${srvr}/zipsearch/${zip}/${radius}`)
+        .then((data) => {
+          return data.data
+        })
+    },
+    getLatLong(zip) {
+      return $http.get(`${srvr}/latlong/${zip}`)
         .then((data) => {
           return data.data
         })

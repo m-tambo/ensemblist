@@ -28,7 +28,11 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
         console.log("users:", users)
         let newArray = users.filter(x => array.includes(Number(x.zip)) ? x : false)
         console.log("newArray:", newArray)
-        return newArray
+        if (newArray.length === 0) {
+          alert('No collaborators found. Please widen your radius')
+        } else {
+          return newArray
+        }
       })
       .then((results) => {
         $scope.results = results   // define the search results on scope
@@ -54,9 +58,31 @@ app.controller('gigViewCtrl', function ($scope, $stateParams, gig, seats, apiFac
       .catch((err) => console.log("error:", err))
   }
 
+
   $scope.showMore = (result) => {
     $scope.moreInfoUser = result
+    $scope.initMap()
   }
+
+  $scope.initMap = () => {
+    console.log("zip injected into api call:", $scope.moreInfoUser.zip)
+    apiFactory.getLatLong($scope.moreInfoUser.zip)
+      .then((data) => {
+        console.log("data:", data)
+        let userZip = {lat: data.lat, lng: data.lng}
+        console.log("userZip:", userZip)
+        let nash = {lat: 36.1627, lng: -86.7816};
+        let map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 9,
+          center: userZip
+        })
+        let marker = new google.maps.Marker({
+          position: userZip,
+          map: map
+        })
+      })
+  }
+
 
     //_______UI BOOTSTRAP TOOLTIP/MODAL ATTEMPT________
   // $(document).ready( () => {

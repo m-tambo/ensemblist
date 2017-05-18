@@ -13,32 +13,17 @@
 <!-- _____ angular app ______ -->
   <div ng-app="ensemblist">
 
-    <navbar> <!-- THIS IS A DIRECTIVE --> </navbar>
+    <navbar> <!-- THIS IS THE NAVBAR DIRECTIVE --> </navbar>
     <div>
       <div ui-view></div>
     </div>
 
   </div> <!-- end of ng-app -->
 
-
-  <!-- <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-
-      <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script>
-              -->
-    <!-- AIzaSyDBVVTWrtEJE9vEdbPh_BtmZMns7sEbPiU -->  <!-- TODO gitignore this -->
-    <!-- async defer -->
-<!--   <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBVVTWrtEJE9vEdbPh_BtmZMns7sEbPiU&callback=initMap">
-  </script> -->
+      <!-- _______google maps api______ -->
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBVVTWrtEJE9vEdbPh_BtmZMns7sEbPiU&callback">
+  </script>
 
       <!-- ______dependency script tags_______ -->
   <script src="/lib/angular/angular.min.js"></script>

@@ -1,1 +1,15 @@
-<h1>Login here</h1>
+<br />
+<h1>LOGIN</h1>
+<hr />
+<form class="login-form" ng-submit="loginUser(email, pass)">
+  <div class="input-field">
+    <label for="login_email">EMAIL</label><br>
+    <input id="login_email" type="text" class="validate" ng-model="email" required>
+  </div>
+  <div class="input-field">
+    <label for="login_pass">PASSWORD</label><br>
+    <input id="login_pass" type="text" class="validate" ng-model="pass" required>
+  </div>
+  <button class="ensem-btn" type="submit">SUBMIT</button>
+
+</form>
