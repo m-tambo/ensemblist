@@ -59,22 +59,22 @@ app
         }
       })
       .state('myGigs', {
-        url: '/mygigs',
+        url: '/mygigs/:id',
         controller: 'myGigsCtrl',
         templateUrl: '/app/partials/myGigs.html',
         resolve: {
           gigs: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
-            return apiFactory.getGigsByOwner(1) // TODO change this to the id of the current user
+            return apiFactory.getGigsByOwner($stateParams.id) // TODO change this to the id of the current user
           }]
         }
       })
       .state('myInvites', {
-        url: '/myinvites',
+        url: '/myinvites/:id',
         controller: 'myInvitesCtrl',
         templateUrl: '/app/partials/myInvites.html',
         resolve: {
           seats: ['apiFactory', '$stateParams', (apiFactory, $stateParams) => {
-            return apiFactory.getSeatsByUser(1) // TODO change this to the id of the current user
+            return apiFactory.getSeatsByUser($stateParams.id) // TODO change this to the id of the current user
           }]
         }
       })
