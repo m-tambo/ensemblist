@@ -3,7 +3,7 @@ const app = angular.module('ensemblist', ['ui.router', 'ui.bootstrap', 'navbar']
 app
   .config(($stateProvider, $urlRouterProvider) => {
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/landing');
 
     $stateProvider
       .state('landing', {
